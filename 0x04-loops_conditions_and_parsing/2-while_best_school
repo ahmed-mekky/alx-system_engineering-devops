@@ -2,7 +2,7 @@
 #this script is doing something
 
 i=0
-while [ $i -le 10 ]
+while [ $i -lt 10 ]
 do
 	echo "Best School"
 	i=$(( i+1 ))
