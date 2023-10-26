@@ -5,8 +5,13 @@ i=0
 while [ $i -lt 10 ]
 do
 	i=$(( i+1 ))
-	if [ $i -eq 9 ]; then
-		echo "Hi"
+	if [ $i -eq 8 ]
+	then
+		echo "good luck"
+		continue
+	elif [ $i -eq 4 ]
+	then
+		echo "good luck"
 		continue
 	fi
 	echo "Best School"
