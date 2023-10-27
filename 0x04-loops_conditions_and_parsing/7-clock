@@ -2,7 +2,7 @@
 #this script is doing something
 
 hour=0
-while [ "$hour" -le 11 ]
+while [ "$hour" -le 12 ]
 do
 	echo "Hour: $hour"
 	((hour++))
