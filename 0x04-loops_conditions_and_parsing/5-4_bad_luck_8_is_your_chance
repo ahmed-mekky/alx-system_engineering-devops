@@ -11,7 +11,7 @@ do
 		continue
 	elif [ $i -eq 4 ]
 	then
-		echo "good luck"
+		echo "bad luck"
 		continue
 	else
 		echo "Best School"
