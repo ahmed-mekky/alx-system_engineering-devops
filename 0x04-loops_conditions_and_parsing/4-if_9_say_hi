@@ -2,9 +2,9 @@
 #this script is doing something
 
 i=0
-while [ $i -lt 10 ]
+while [ "$i" -lt 10 ]
 do
-	i=$(( i+1 ))
+	(( i++ ))
 	if [ $i -eq 9 ]; then
 		echo "Hi"
 		continue
