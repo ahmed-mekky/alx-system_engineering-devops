@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #this script is doing something
 
-hour=1
-while [ "$hour" -le 12 ]
+hour=0
+while [ "$hour" -le 11 ]
 do
 	echo "Hour: $hour"
 	((hour++))
