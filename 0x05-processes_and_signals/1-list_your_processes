@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # this code is also doing something
 
-ps au -H | cat
+ps -H -A u | cat
