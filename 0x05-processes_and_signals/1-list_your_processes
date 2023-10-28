@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# this code is also doing something
+
+ps a | cat
