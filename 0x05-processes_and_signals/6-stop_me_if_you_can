@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# this code is also doing something
+
+pkill -f "4-to_infinity_and_beyond"
