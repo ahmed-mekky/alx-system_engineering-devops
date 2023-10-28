@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # this code is also doing something
 
-pgrep -x "7-highlander"
+pgrep -x "7-highlander" | kill
