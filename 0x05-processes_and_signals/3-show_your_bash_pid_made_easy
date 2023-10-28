@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# this code is also doing something
+# shellcheck disable=SC2009
+
+pgrep bash -l
