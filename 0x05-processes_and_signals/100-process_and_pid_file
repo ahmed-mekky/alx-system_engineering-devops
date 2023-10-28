@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # this code is also doing something
 
-trap "echo 'I hate the kill command' && rm /var/run/myscript.pid" SIGTERM
+trap "echo 'I hate the kill command' && rm /var/run/myscript.pid && pkill -f '100-process_and_pid_file'" SIGTERM
 trap "echo 'Y U no love me?!'" SIGINT
-trap "rm /var/run/myscript.pid" SIGQUIT
+trap "rm /var/run/myscript.pid && pkill -f '100-process_and_pid_file'" SIGQUIT
 
 touch /var/run/myscript.pid
 echo pgrep -f "myscript.pid" >> /var/run/myscript.pid
