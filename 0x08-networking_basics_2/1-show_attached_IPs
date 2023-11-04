@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #this script is doing something
 
-ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}'
+ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | cut -b 11-
