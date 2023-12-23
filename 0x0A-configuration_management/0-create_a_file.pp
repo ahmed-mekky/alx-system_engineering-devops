@@ -1,5 +1,5 @@
 file { '/tmp/school' :
-	ensure => 'file',
+	ensure => file,
 	mode => '0744',
 	group => 'www-data',
 	owner => 'www-data',
