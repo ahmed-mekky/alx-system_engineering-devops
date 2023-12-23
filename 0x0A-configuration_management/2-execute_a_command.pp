@@ -1,6 +1,6 @@
 #doing some stuff
 
 exce { 'pkill':
-  command   => 'pkill killmenow',
-  provider => shell
+  command  => 'pkill killmenow',
+  provider => 'shell'
 }
