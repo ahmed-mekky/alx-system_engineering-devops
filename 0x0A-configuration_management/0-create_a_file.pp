@@ -1,3 +1,5 @@
+#doing some stuff
+
 file { '/tmp/school' :
   ensure  => 'file',
   mode    => '0744',
