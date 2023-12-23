@@ -1,6 +1,6 @@
 #doing some stuff
 
-exce { 'pkill':
+exec { 'killmenow':
   command  => 'pkill killmenow',
   provider => 'shell'
 }
