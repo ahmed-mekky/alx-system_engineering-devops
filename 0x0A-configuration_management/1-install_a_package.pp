@@ -1,4 +1,4 @@
-#doing some stuff
+#doing some stufff
 
 package {'flask':
   ensure   => '2.1.0',
