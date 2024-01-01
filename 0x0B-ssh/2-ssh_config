@@ -1,0 +1,6 @@
+#this file is saving the world :)
+
+Host *
+	HostName 54.144.130.216
+	IdentityFile ~/.ssh/school
+	PasswordAuthentication no
