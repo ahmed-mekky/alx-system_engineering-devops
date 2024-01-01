@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#this script is saving the world :)
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/school -p "betty"
