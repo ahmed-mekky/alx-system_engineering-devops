@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#this script is saving the world :)
+ssh -i ~/.ssh/school ubuntu@54.144.130.216
