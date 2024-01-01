@@ -1,5 +1,7 @@
 #this file is saving the world :)
 
+include stdlib
+
 file_line { 'name':
   ensure => present,
   path   => '/etc/ssh/ssh_config',
