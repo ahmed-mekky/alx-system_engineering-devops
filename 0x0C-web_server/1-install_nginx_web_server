@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
 #saving the world again
 
-#change usr to root
-sudo su
-
 #the task
-apt-get update -y
-apt-get install nginx -y
+sudo apt-get update -y
+sudo apt-get install nginx -y
 echo "Hello World!" > /var/www/html/index.html
 service enginx start
