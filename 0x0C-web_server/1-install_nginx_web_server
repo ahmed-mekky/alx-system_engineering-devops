@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#saving the world again
+
+#change usr to root
+sudo su
+
+#the task
+apt update
+apt install nginx
+echo "Hello World!" > ~/var/www/html/index.html
+nginx
