@@ -2,7 +2,7 @@
 #saving the world again
 
 #the task
-sudo apt-get update -y
-sudo apt-get install nginx -y
+sudo apt-get -y update
+sudo apt-get -y install nginx
 echo "Hello World!" > /var/www/html/index.html
 service enginx start
