@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 #saving the world again
 
-sudo su
-#the task
-apt-get update
-apt-get -y install nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
 echo 'Hello World!' > /var/www/html/index.html
-sed -i 'listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/ permanent;' /etc/nginx/sites-available/default
-echo "Ceci n'est pas une page" > /var/www/html/custom404.html
-sed -i "error_page 404 /custom404.html;" /etc/nginx/sites-available/default
-service nginx start
+sed -i '23i rewrite ^/redirect_me https://www.youtube.com/ permanent;' /etc/nginx/sites-available/default
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+sed -i "43i error_page 404 /404.html;" /etc/nginx/sites-available/default
+sudo service nginx start
