@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 #saving the world again
 
-sudo su
-#the task
-apt-get update
-apt-get -y install nginx
+sudo apt-get -y update
+sudo apt-get -y install nginx
 echo 'Hello World!' > /var/www/html/index.html
 sed -i '24i rewrite ^/redirect_me https://www.youtube.com/ permanent;' /etc/nginx/sites-available/default
 
-service nginx start
+sudo service nginx restart
