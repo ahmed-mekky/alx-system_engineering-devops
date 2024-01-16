@@ -17,7 +17,7 @@ exec {'redirect_me':
   command  => 'sed -i "23i\	 rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default',
   provider => 'shell'
 }
-exec {'add_header':
+exec {'HTTP header':
   command  => 'sed -i "24i\	 add_header X-Served-By \$hostname;" /etc/nginx/sites-available/default',
   provider => 'shell'
 }
