@@ -6,15 +6,15 @@ exec { 'update':
 
 package { 'nginx':
   ensure  => 'installed',
+  require => Exec['update system']
 }
 
 file {'/var/www/html/index.html':
-  path    => '/var/www/html/index.html',
   content => 'Hello World!',
 }
 
 exec {'redirect_me':
-  command  => 'sed -i "23i\	 rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;" /etc/nginx/sites-available/default',
+  command  => 'sed -i "23i\	 rewrite ^/redirect_me https://www.youtube.com/ permanent;" /etc/nginx/sites-available/default',
   provider => 'shell'
 }
 exec {'HTTP header':
@@ -23,4 +23,5 @@ exec {'HTTP header':
 }
 service {'nginx':
   ensure  => running,
+  require => Package['nginx']
 }
