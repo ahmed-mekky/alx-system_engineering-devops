@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 #saving the world again
 
+sudo apt-get update
+sudo apt-get install -y haproxy
 cat <<EOF > conf.cfg
 frontend main
         bind *:80
