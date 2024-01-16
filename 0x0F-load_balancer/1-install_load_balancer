@@ -7,6 +7,7 @@ frontend main
         timeout client 10s
         default_backend main
 backend main
+	balance roundrobin
         timeout server 10s
         timeout connect 10s
         server web-01 34.224.2.46:80
