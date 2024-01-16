@@ -1,13 +1,17 @@
 #!/usr/bin/env bash
 #random bash script
 
-domainhost=$(dig $1 +short)
-
 if [ $# -lt 2 ]; then
 	domainlist=(www lb-01 web-01 web-02)
 	for i in {0..3}; do
-    		echo "The subdomain ${domainlist[i]} is a A record and points to $domainhost"
+		domainhost=$(dig "${domainlist[i]}.$1" +short)
+		if [ -n "$domainhost" ]; then
+    			echo "The subdomain ${domainlist[i]} is a A record and points to $domainhost"
+		fi
 	done
 else
-	echo "The subdomain $2 is a A record and points to $domainhost"
+	domainhost=$(dig "$2.$1" +short)
+	if [ -n "$domainhost" ]; then
+		echo "The subdomain $2 is a A record and points to $domainhost"
+	fi
 fi
