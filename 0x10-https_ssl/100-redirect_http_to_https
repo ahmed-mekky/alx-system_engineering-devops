@@ -1,0 +1,13 @@
+frontend main
+        bind *:80
+        bind *:443 ssl crt /etc/haproxy/domain.pem
+        mode http
+        timeout client 10s
+	http-request redirect scheme https code 301 unless { ssl_fc }
+        default_backend main
+backend main
+        timeout server 10s
+        timeout connect 10s
+        mode http
+        server web-01 34.224.2.46:80
+        server web-02 34.204.60.68:80
