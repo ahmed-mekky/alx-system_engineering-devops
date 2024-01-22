@@ -1,3 +1,4 @@
+sudo su
 ufw default deny incoming
 ufw allow to any port 22
 ufw allow to any port 80
