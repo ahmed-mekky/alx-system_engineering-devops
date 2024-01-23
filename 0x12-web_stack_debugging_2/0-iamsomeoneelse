@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 #normal bash script 
 
-sudo su "$1"
-whoami
-sudo su
+sudo su '$1' -c "whoami"
