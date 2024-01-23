@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 #random bash script
 
-sudo iptables\
---table nat\
---append PREROUTING\
---protocol tcp\
---dport 8080\
---jump REDIRECT\
+sudo iptables \
+--table nat \
+--append PREROUTING \
+--protocol tcp \
+--dport 8080 \
+--jump REDIRECT \
 --to 80
