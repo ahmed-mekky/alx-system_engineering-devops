@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#normal bash script 
+
+su $1
+whoami
+sudo su
