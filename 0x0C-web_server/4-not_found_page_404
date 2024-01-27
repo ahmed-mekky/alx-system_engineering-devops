@@ -7,4 +7,4 @@ echo 'Hello World!' > /var/www/html/index.html
 sed -i '23i rewrite ^/redirect_me https://www.youtube.com/ permanent;' /etc/nginx/sites-available/default
 echo "Ceci n'est pas une page" > /var/www/html/404.html
 sed -i "43i error_page 404 /404.html;" /etc/nginx/sites-available/default
-sudo service nginx start
+sudo service nginx restart
