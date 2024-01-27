@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 #this is a comment
-
-mysqldump --all-databases -uroot -p"$1" backup.sql
-tar -cvzf "$(date +%m-%d-%Y).tar.gz" ./backup.sql
+mysqldump -uroot -p"$1" --all-databases > backup.sql
+tar -czvf $(date +%d-%m-%Y).tar.gz backup.sql
