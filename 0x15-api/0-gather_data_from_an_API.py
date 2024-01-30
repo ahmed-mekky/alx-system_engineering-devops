@@ -27,4 +27,4 @@ if __name__ == "__main__":
 {completed_tasks}/{total_tasks}):"
         )
         for task in tasks:
-            print(f"     {task}")
+            print(f"\t {task}")
