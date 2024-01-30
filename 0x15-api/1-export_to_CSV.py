@@ -11,11 +11,11 @@ if __name__ == "__main__":
         f"https://jsonplaceholder.typicode.com/users/{argv[1]}/todos"
     ) as json_response:
         todos = json.loads(json_response.content)
-        with requests.get(
-            f"https://jsonplaceholder.typicode.com/users/{argv[1]}"
-        ) as json_user:
-            user_dict = json.loads(json_user.content)
-            employee_name = user_dict.get("name")
+    with requests.get(
+        f"https://jsonplaceholder.typicode.com/users/{argv[1]}"
+    ) as json_user:
+        user_dict = json.loads(json_user.content)
+        employee_name = user_dict.get("username")
     for todo in todos:
         todo["name"] = employee_name
         todo.pop("id")
