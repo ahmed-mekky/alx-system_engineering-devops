@@ -4,10 +4,10 @@ import json
 import requests
 
 if __name__ == "__main__":
-    response = requests.get("https://jsonplaceholder.typicode.com/users").json()
+    res = requests.get("https://jsonplaceholder.typicode.com/users").json()
     user_todo = {}
     i = 1
-    for user in response:
+    for user in res:
         with requests.get(
             f"https://jsonplaceholder.typicode.com/users/{i}/todos"
         ) as json_response:
