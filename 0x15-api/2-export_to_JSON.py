@@ -17,7 +17,9 @@ if __name__ == "__main__":
         employee_name = user_dict.get("username")
     for todo in todos:
         todo["username"] = employee_name
+        todo["task"] = todo.get("title")
         todo.pop("id")
+        todo.pop("title")
         todo.pop("userId")
     user_todo = {}
     user_todo[argv[1]] = todos
