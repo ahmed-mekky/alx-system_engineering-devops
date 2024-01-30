@@ -20,7 +20,7 @@ if __name__ == "__main__":
         todo["name"] = employee_name
         todo.pop("id")
     user_id = todos[0].get("userId")
-    fields = ["userId", "name", "completed", "title"]
+    fds = ["userId", "name", "completed", "title"]
     with open(f"{user_id}.csv", "w", newline="") as csv_file:
-        writer = csv.DictWriter(csv_file, quoting=csv.QUOTE_ALL, fieldnames=fields)
+        writer = csv.DictWriter(csv_file, quoting=csv.QUOTE_ALL, fieldnames=fds)
         writer.writerows(todos)
