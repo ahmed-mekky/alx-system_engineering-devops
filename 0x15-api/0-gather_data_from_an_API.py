@@ -16,12 +16,14 @@ if __name__ == "__main__":
             user_dict = json.loads(json_user.content)
             employee_name = user_dict.get("name")
         completed_tasks, total_tasks = 0, 0
+        tasks = []
         for todo in todos:
             if todo.get("completed") is True:
                 completed_tasks += 1
+                tasks.append(todo.get("title"))
             total_tasks += 1
         print(
             f"Employee {employee_name} is done with tasks({completed_tasks}/{total_tasks}):"
         )
-        for todo in todos:
-            print(f"     {todo.get('title')}")
+        for task in tasks:
+            print(f"     {task}")
