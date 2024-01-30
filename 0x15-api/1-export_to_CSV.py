@@ -22,7 +22,5 @@ if __name__ == "__main__":
     user_id = todos[0].get("userId")
     fields = ["userId", "name", "completed", "title"]
     with open(f"{user_id}.csv", "w", newline="") as csv_file:
-        writer = csv.DictWriter(
-            csv_file, quoting=csv.QUOTE_NONNUMERIC, fieldnames=fields
-        )
+        writer = csv.DictWriter(csv_file, quoting=csv.QUOTE_ALL, fieldnames=fields)
         writer.writerows(todos)
