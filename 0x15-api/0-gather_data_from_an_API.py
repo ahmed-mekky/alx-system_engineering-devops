@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""first api module"""
 import requests
 import json
 from sys import argv
