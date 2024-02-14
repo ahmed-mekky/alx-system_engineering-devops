@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""
+important script
+"""
 import requests
 def recurse(subreddit, hot_list=[], after=None):
     """
