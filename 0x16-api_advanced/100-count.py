@@ -9,6 +9,7 @@ def count_words(subreddit, word_list, after=None, count=None):
     """
     base_url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=100'
     x = False
+    after_post = after
     if count is None:
         counter = {}
     else:
