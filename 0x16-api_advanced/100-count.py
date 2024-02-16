@@ -1,42 +1,49 @@
 #!/usr/bin/python3
-"""
-important script
-"""
+"just for the module to be documented"
 import requests
-import re
 
 
-def count_words(subreddit, word_list, after=None):
+def count_words(subreddit, word_list, after=None, count=None):
     """
-    Get the number of subscribers for a given subreddit.
+    Count occurrences of words in the titles of posts from a given subreddit.
     """
-    b_url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=100'
+    base_url = f'https://www.reddit.com/r/{subreddit}/hot.json?limit=100'
     x = False
-    word_counter = {}
-    if subreddit:
-        if after is None:
-            url = b_url
-        else:
-            url = b_url + after
-        res = requests.get(url, headers={'User-Agent': 'A Python script'},
-                           allow_redirects=False)
-        if res.status_code == 200:
-            json_res = res.json()
-            childern = json_res.get('data').get('children')
-            if json_res.get('data').get('after') is None:
-                if len(childern) == 0:
-                    return word_counter
-                x = True
-            for i in range(len(childern)):
-                for word in childern[i].get('data').get('title').split():
-                    for l_word in word_list:
-                        if word.lower() == re.sub(r"[^\w]", "", l_word).lower():
-                            word_counter[word.lower()] = word_counter.get(word, 0) + 1
-            after_post = f"&after={json_res.get('data').get('after')}"
-            if x:
-                for key, val in sorted(word_counter.items()):
-                    print(f"{key}: {val}")
-                exit()
-        else:
-            return None
-        return count_words(subreddit, word_list, after=after_post)
+    if count is None:
+        counter = {}
+    else:
+        counter = count
+
+    if after is None:
+        url = base_url
+    else:
+        url = base_url + after
+
+    res = requests.get(url, headers={'User-Agent': 'A Python script'},
+                       allow_redirects=False)
+
+    if res.status_code == 200:
+        json_res = res.json()
+        children = json_res.get('data', {}).get('children', [])
+
+        if json_res.get('data', {}).get('after') is None:
+            if len(children) == 0:
+                return counter
+            x = True
+
+        # Extract words from titles and update the counter
+        for post in children:
+            title = post.get('data', {}).get('title', '')
+            words = title.split()
+            for word in words:
+                clean_word = ''.join(c for c in word if c.isalpha()).lower()
+                if clean_word in word_list:
+                    counter[clean_word] = counter.get(clean_word, 0) + 1
+
+        after_post = f"&after={json_res.get('data', {}).get('after')}"
+        if x:
+            for key, val in sorted(counter.items()):
+                print(f"{key}: {val}")
+            exit()
+
+    return count_words(subreddit, word_list, after=after_post, count=counter)
