@@ -34,7 +34,7 @@ def count_words(subreddit, word_list, after=None):
                             word_counter[word.lower()] = word_counter.get(word, 0) + 1
             after_post = f"&after={json_res.get('data').get('after')}"
             if x:
-                for key, val in word_counter.items():
+                for key, val in sorted(word_counter.items()):
                     print(f"{key}: {val}")
                 exit()
         else:
