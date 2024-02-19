@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # bash script to fix nginx server
 
-sed -i "s/8080/80/g" /etc/nginx/sites-enabled/default
+cd /etc/nginx/sites-enabled/ || exit;
+cp /etc/nginx/sites-available/default default;
 service nginx restart
