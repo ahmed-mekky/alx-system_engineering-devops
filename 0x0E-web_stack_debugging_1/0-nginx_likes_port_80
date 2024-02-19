@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# bash script to fix nginx server
+
+service nginx restart
