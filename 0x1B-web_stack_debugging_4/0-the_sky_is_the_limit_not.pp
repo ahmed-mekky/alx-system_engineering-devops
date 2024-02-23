@@ -1,11 +1,11 @@
-# comment
+# fixing nginx file limit
 
-exec { 'fixing limit of nginx':
-  command => 'sed -i "s/15/4096/" /etc/default/nginx',
+exec {'fixing_limits':
+  command     => 'sed -i "s/15/4096/" /etc/default/nginx',
   provider    => shell
 }
 
-exec { 'nginx-restart':
-  command => 'service nginx restart',
+exec {'nginx-restart':
+  command     => 'service nginx restart',
   provider    => shell
 }
